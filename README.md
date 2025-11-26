@@ -27,7 +27,6 @@ A mobile‑friendly learner dashboard that empowers users to track progress, acc
 ---
 
 🗂️ Explanation of the Data Flow
-To make sure you can also explain it in hackathons or documentation, here’s the breakdown:
 
 User (Learner)
 
