@@ -26,7 +26,7 @@ A mobile‑friendly learner dashboard that empowers users to track progress, acc
 
 ---
 
-Installation
+<h2>Installation</h2>
 
 # Clone the repository
 git clone https://github.com/your-username/learner-dashboard.git
