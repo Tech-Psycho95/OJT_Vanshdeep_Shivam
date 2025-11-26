@@ -4,19 +4,12 @@ A mobile‑friendly learner dashboard that empowers users to track progress, acc
 
 ------
 
-✨ Features
-
-📱 Responsive Design – Optimized for mobile, tablet, and desktop using TailwindCSS utilities.
-
-🎯 Progress Tracking – Visual charts and stats to monitor learning milestones.
-
-📂 Course Access – Browse, enroll, and continue courses with a clean UI.
-
-🗂️ Activity Management – Manage assignments, schedules, and learning tasks in one place.
-
-🔒 Authentication Ready – Scalable structure for login/signup integration.
-
-⚡ Performance Optimized – Angular’s modular architecture ensures fast rendering and smooth navigation.
+| Feature            | Description                          | Status |
+|---------------------|--------------------------------------|--------|
+| 📱 Responsive UI    | Works on mobile, tablet, desktop     | ✅     |
+| 📊 Progress Tracking| Charts & stats for learners          | 🚧     |
+| 🎯 Course Access    | Browse and enroll in courses         | ✅     |
+| 🔒 Authentication   | Secure login/signup                  | Planned|
 
 ---
 
