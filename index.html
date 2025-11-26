@@ -6,80 +6,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="nav">
-        <div class="logo"><img src="./oppia-logo-primary.png" alt=""></div>
 
-        <ul class="nav-links">
-            <li id="homeBtn" class="click-animate">Home</li>
-
-            <li class="account-wrapper click-animate" id="accountBtn">
-    Account
-    <div class="dropdown" id="accountDropdown">
-        <div class="drop-item click-animate">li1</div>
-        <div class="drop-item click-animate">li2</div>
-        <div class="drop-item click-animate">li3</div>
+<nav class="nav">
+    <div class="logo">
+        <img src="./oppia-logo-primary.png">
     </div>
-</li>
- <li class="account-wrapper click-animate" id="learnBtn">
-    Learn
-    <div class="dropdown" id="learnDropdown">
 
-        <div class="drop-item click-animate">Maths</div>
-        <div class="drop-item click-animate">Science</div>
-    </div>
-</li>
- <li class="account-wrapper click-animate" id="aboutBtn">
-    About
-    <div class="dropdown" id="aboutDropdown">
-        <div class="drop-item click-animate">About</div>
-        <div class="drop-item click-animate">teachers</div>
-        <div class="drop-item click-animate">parents</div>
-        <div class="drop-item click-animate">Blog</div>
-    </div>
-</li>
+    <div class="menu-toggle" id="menuToggle">☰</div>
 
-        </ul>
-    </nav>
+    <ul class="nav-links" id="navLinks">
+        <li id="homeBtn" class="click-animate">Home</li>
 
-    <h1 class="title click-animate">DASHBOARD</h1>
-
-    <div class="main">
-
-        <div class="dashboard click-animate">
-            <h2>Welcome Back</h2>
-            <p>Your learning summary appears here.</p>
-        </div>
-
-        <div class="Graph click-animate">
-            <h2>Completion Graph</h2>
-            <div class="pie"></div>
-        </div>
-
-        <div class="prog_bar click-animate">
-            <h2>Your Progress</h2>
-            <div class="progress-container">
-                <div class="progress-fill" style="width: 65%;"></div>
+        <li class="account-wrapper click-animate" id="accountBtn">
+            Account
+            <div class="dropdown" id="accountDropdown">
+                <div class="drop-item">Subscription</div>
+                <div class="drop-item">Profile</div>
+                <div class="drop-item">Help</div>
             </div>
-            <p>65% Complete</p>
-        </div>
-         <div class="contentbar click-animate">
-    <h2>Content</h2>
-    <ul class="content-list">
-        <li>🎯 Goals</li>
-        <li>📊 Progress</li>
-        <li>👥 Community Lessons</li>
+        </li>
+
+        <li class="account-wrapper click-animate" id="learnBtn">
+            Learn
+            <div class="dropdown" id="learnDropdown">
+                <div class="drop-item">Maths</div>
+                <div class="drop-item">Science</div>
+            </div>
+        </li>
+
+        <li class="account-wrapper click-animate" id="aboutBtn">
+            About
+            <div class="dropdown" id="aboutDropdown">
+                <div class="drop-item">About</div>
+                <div class="drop-item">Teachers</div>
+                <div class="drop-item">Parents</div>
+                <div class="drop-item">Blog</div>
+            </div>
+        </li>
     </ul>
-</div>
+</nav>
 
-         <div class="Learn_new click-animate">
-            <h2>Learn soemthing new/ continue where you left off</h2>
-        </div>
+<h1 class="dashboard-heading">DASHBOARD</h1>
 
+<div class="main">
+
+    <div class="dashboard click-animate">
+        <h2>Welcome Back abc!</h2>
+        <p>Your learning summary appears here.</p>
     </div>
+
+    <div class="Graph click-animate">
+        <h2>Completion Graph</h2>
+        <div class="pie"></div>
+    </div>
+
+    <div class="prog_bar click-animate">
+        <h2>Your Progress</h2>
+        <div class="progress-container">
+            <div class="progress-fill"></div>
+        </div>
+        <p>65% Complete</p>
+    </div>
+
+    <div class="contentbar click-animate">
+        <h2>Content</h2>
+        <ul class="content-list">
+            <li>🎯 Goals</li>
+            <li>📊 Progress</li>
+            <li>👥 Community Lessons</li>
+        </ul>
+    </div>
+
+    <div class="Learn_new click-animate">
+        <h2>Learn something new or continue</h2>
+    </div>
+
+</div>
 
 <script src="script.js"></script>
 </body>
