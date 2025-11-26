@@ -28,19 +28,19 @@ A mobile‑friendly learner dashboard that empowers users to track progress, acc
 
 🗂️ Explanation of the Data Flow
 
-User (Learner)
+- User (Learner)
 
 Interacts via the Responsive UI (Angular + TailwindCSS).
 
 Can log in, browse courses, track progress, and manage activities.
 
-Frontend (Angular App)
+- Frontend (Angular App)
 
 Handles routing, UI rendering, and state management.
 
 Sends requests to backend services via HTTP/REST APIs.
 
-Backend Services
+- Backend Services
 
 Authentication Service → Validates login/signup, issues tokens.
 
@@ -50,7 +50,7 @@ Progress Tracking Module → Stores and retrieves learner progress, generates ch
 
 Activity Management Module → Manages assignments, schedules, and notifications.
 
-Database/API Layer
+- Database/API Layer
 
 Stores user profiles, course data, progress records, and activity logs.
 
