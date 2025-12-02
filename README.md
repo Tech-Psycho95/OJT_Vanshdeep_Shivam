@@ -1,5 +1,5 @@
 <h2>📚Learner Dashboard</h2>
-A mobile‑friendly learner dashboard that empowers users to track progress, access courses, and manage learning activities seamlessly across devices. Built with Angular, TypeScript, HTML and CSS, the dashboard is designed for an intuitive, engaging, and responsive learning experience.
+An oppia styled mobile‑friendly learner dashboard that empowers users to track progress, access courses, and manage learning activities seamlessly across devices. Built with Angular, TypeScript, HTML and CSS, the dashboard is designed for an intuitive, engaging, and responsive learning experience.
 
 <h2>Features</h2>
 
