@@ -33,7 +33,7 @@ Open a Pull Request
 
 This diagram illustrates the frontend-only login flow for an Oppia-styled learner dashboard. It shows how data moves from the learner to the dashboard UI through various components and services.
 
-<img src=""/>
+<img src="https://github.com/Tech-Psycho95/OJT_Vanshdeep_Shivam/blob/main/Dataflow_diagram.png"/>
 
 ### Flow Overview
 
