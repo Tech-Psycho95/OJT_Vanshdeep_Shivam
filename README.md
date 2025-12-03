@@ -1,5 +1,5 @@
 <h2>📚Learner Dashboard</h2>
-A mobile‑friendly learner dashboard that empowers users to track progress, access courses, and manage learning activities seamlessly across devices. Built with Angular, TypeScript, HTML and CSS, the dashboard is designed for an intuitive, engaging, and responsive learning experience.
+An oppia styled mobile‑friendly learner dashboard that empowers users to track progress, access courses, and manage learning activities seamlessly across devices. Built with Angular, TypeScript, HTML and CSS, the dashboard is designed for an intuitive, engaging, and responsive learning experience.
 
 <h2>Features</h2>
 
@@ -26,5 +26,16 @@ Open a Pull Request
 
 ---
 
-<h2>UI</h2>
+<h2>🖼️ UI Screenshot</h2>
 <img src="https://github.com/Van5hdeep/OJT_Vanshdeep_Shivam/blob/main/Asset-UI%20interface.jpg"/>
+
+<h2>🧩 Dataflow Diagram</h2>
+
+This diagram illustrates the frontend-only login flow for an Oppia-styled learner dashboard. It shows how data moves from the learner to the dashboard UI through various components and services.
+
+<img src="https://github.com/Tech-Psycho95/OJT_Vanshdeep_Shivam/blob/main/Dataflow_diagram.png"/>
+
+### Flow Overview
+
+```
+Learner → Login Form View(enters credentials) → Authentication Service(Updates state) → Frontend State Management → Dashboard View Container → Dashboard Router → Dashboard UI                                         
