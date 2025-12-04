@@ -26,10 +26,13 @@ Contributions are welcome!
 
 To run the webapp on local sever or machine:
 
-- First check are you in root directory named angular.json
+- First check are you in root workspace folder where angular.json is present
 - If yes then run this command:
   ```
   ng serve
+- if no then run:
+  ```
+  cd path/to/workspace-folder
 
 ---
 
