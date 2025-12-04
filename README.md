@@ -45,7 +45,7 @@ This diagram illustrates the frontend-only login flow for an Oppia-styled learne
 
 <img src="https://github.com/Tech-Psycho95/OJT_Vanshdeep_Shivam/blob/main/Dataflow_diagram.png"/>
 
-### Flow Overview
+### Dataflow Overview
 
 ```
 Learner → Login Form View(enters credentials) → Authentication Service(Updates state) → Frontend State Management → Dashboard View Container → Dashboard Router → Dashboard UI                                         
