@@ -14,15 +14,25 @@ An oppia styled mobile‑friendly learner dashboard that empowers users to track
 
 Contributions are welcome!
 
-Fork the repo
+- Fork the repo
 
-Create a feature branch (git checkout -b feature-name)
+- Create a feature branch (git checkout -b feature-name)
 
-Commit changes (git commit -m "Add feature")
+- Commit changes (git commit -m "Add feature")
 
-Push to branch (git push origin feature-name)
+- Push to branch (git push origin feature-name)
 
-Open a Pull Request
+- Open a Pull Request
+
+To run the webapp on local sever or machine:
+
+- First check are you in root workspace folder where angular.json is present
+- If yes then run this command:
+  ```
+  ng serve
+- if no then run:
+  ```
+  cd path/to/workspace-folder
 
 ---
 
