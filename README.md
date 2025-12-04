@@ -32,7 +32,7 @@ To run the webapp on local sever or machine:
   ng serve
 - if no then run:
   ```
-  cd path/to/workspace-folder
+  cd ~path/to/workspace-folder
 
 ---
 
