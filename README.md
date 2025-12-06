@@ -1,6 +1,33 @@
+<h2>📚Learner Dashboard</h2>
+An oppia styled mobile‑friendly learner dashboard that empowers users to track progress, access courses, and manage learning activities seamlessly across devices. Built with Angular, TypeScript, HTML and CSS, the dashboard is designed for an intuitive, engaging, and responsive learning experience.
 
-<h2>🖼️ UI Screenshot</h2>
-<img src="https://github.com/Van5hdeep/OJT_Vanshdeep_Shivam/blob/main/Asset-UI%20interface.jpg"/>
+<h2>Features</h2>
+
+| Feature            | Description                          | Status |
+|---------------------|--------------------------------------|-------|
+| 📱 Responsive UI    | Works on mobile, tablet, desktop     | ✅   |
+| 🎯 Course Access    | Browse and enroll in courses         | ✅   |
+| 🔒 Authentication   | Secure login/signup                  | ✅   |
+
+<h2>🤝Contributing</h2>
+
+- Contributions are welcome!
+
+- Fork the repo
+
+- Create a feature branch (git checkout -b feature-name)
+
+- Commit changes (git commit -m "Add feature")
+
+- Push to branch (git push origin feature-name)
+
+- Open a Pull Request
+
+---
+
+<h2>🖼️ UI Screenshots</h2>
+<img src="https://github.com/Tech-Psycho95/OJT_Vanshdeep_Shivam/blob/main/Asset-UI%20interface.jpg"/>
+<img src="https://github.com/Tech-Psycho95/OJT_Vanshdeep_Shivam/blob/main/Login_page.jpg"/>
 
 <h2>🧩 Dataflow Diagram</h2>
 
