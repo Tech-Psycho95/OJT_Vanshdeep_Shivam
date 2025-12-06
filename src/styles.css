@@ -363,6 +363,31 @@ h3 {
   z-index: 3;
   margin-top: -85px;
 }
+@media (max-width: 768px) {
+  .dashboard-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-content {
+    order: 1;
+    width: 100%;
+  }
+
+  .sidebar {
+    order: 2;
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 16px;
+  }
+
+  .greeting {
+    display: block;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+}
+
 
 
 

@@ -1,0 +1,84 @@
+<nav class="navbar">
+  <div class="nav-container">
+    <img
+      src="https://www.oppia.org/build/assets/images/logo/288x128_logo_white.80dd4d21161938beda1b9f44ee840ac5.png"
+      class="logo"
+    />
+
+    <ul class="nav-links" [class.show]="menuOpen">
+      <li (click)="navClick('Learn')">Learn</li>
+      <li (click)="navClick('About')">About</li>
+      <li (click)="navClick('Get Involved')">Get Involved</li>
+      <li (click)="navClick('Donate')">Donate</li>
+    </ul>
+
+    <div class="menu-btn" (click)="toggleMenu()">&#9776;</div>
+
+    <div class="profile">
+      <img
+        src="https://storage.googleapis.com/oppiaserver-resources/user/Test10/assets/profile_picture.png"
+      />
+    </div>
+  </div>
+</nav>
+
+<main class="dashboard-container">
+  <aside class="sidebar">
+    <p (click)="setActive('Home')" [class.active]="activeItem === 'Home'">Home</p>
+    <p (click)="setActive('Goals')" [class.active]="activeItem === 'Goals'">Goals</p>
+    <p (click)="setActive('Progress')" [class.active]="activeItem === 'Progress'">Progress</p>
+    <p
+      (click)="setActive('Community Lessons')"
+      [class.active]="activeItem === 'Community Lessons'"
+    >
+      Community Lessons
+    </p>
+  </aside>
+
+  <section class="main-content">
+    <h2 class="greeting">Good Afternoon, Test10!</h2>
+
+    <section class="continue-section">
+      <h3>Continue where you left off</h3>
+
+      <div class="story-card">
+        <img
+          src="https://storage.googleapis.com/oppiaserver-resources/story/UMvIMKl4dTyC/assets/thumbnail/img_20250627_205109_xsr8cwcx9o_height_186_width_248.svg"
+        />
+        <div class="story-info">
+          <p class="story-title">A tour of the electrical company</p>
+          <p class="story-topic">Basics of Energy</p>
+          <button (click)="continueLesson()">Continue</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="suggested-section">
+      <h3>Learn Something New</h3>
+
+      <div class="topic-grid">
+        <div class="topic-card" (click)="openTopic('Place Values')">
+          <img
+            src="https://storage.googleapis.com/oppiaserver-resources/topic/iX9kYCjnouWN/assets/thumbnail/img_20200521_033202_4r4j4ljrwy_height_324_width_432.svg"
+          />
+          <p>Place Values</p>
+        </div>
+
+        <div class="topic-card" (click)="openTopic('Addition & Subtraction')">
+          <img
+            src="https://storage.googleapis.com/oppiaserver-resources/topic/sWBXKH4PZcK6/assets/thumbnail/img_20200906_225251_bkvjd84p8c_height_1065_width_1420.svg"
+          />
+          <p>Addition & Subtraction</p>
+        </div>
+
+        <div class="topic-card" (click)="openTopic('Multiplication')">
+          <img
+            src="https://storage.googleapis.com/oppiaserver-resources/topic/C4fqwrvqWpRm/assets/thumbnail/img_20200703_022435_j83mwprxmz_height_567_width_756.svg"
+          />
+          <p>Multiplication</p>
+        </div>
+      </div>
+    </section>
+  </section>
+</main>
+
