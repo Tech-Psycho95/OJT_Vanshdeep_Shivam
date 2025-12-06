@@ -26,8 +26,9 @@ An oppia styled mobile‑friendly learner dashboard that empowers users to track
 
 ---
 
-<h2>🖼️ UI Screenshot</h2>
-<img src=""/>
+<h2>🖼️ UI Screenshots</h2>
+<img src="https://github.com/Tech-Psycho95/OJT_Vanshdeep_Shivam/blob/main/Asset-UI%20interface.jpg"/>
+<img src="https://github.com/Tech-Psycho95/OJT_Vanshdeep_Shivam/blob/main/Login_page.jpg"/>
 
 <h2>🧩 Dataflow Diagram</h2>
 
