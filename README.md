@@ -4,11 +4,10 @@ An oppia styled mobile‑friendly learner dashboard that empowers users to track
 <h2>Features</h2>
 
 | Feature            | Description                          | Status |
-|---------------------|--------------------------------------|--------|
-| 📱 Responsive UI    | Works on mobile, tablet, desktop     | ✅     |
-| 📊 Progress Tracking| Charts & stats for learners          | 🚧     |
-| 🎯 Course Access    | Browse and enroll in courses         | ✅     |
-| 🔒 Authentication   | Secure login/signup                  | Planned|
+|---------------------|--------------------------------------|-------|
+| 📱 Responsive UI    | Works on mobile, tablet, desktop     | ✅   |
+| 🎯 Course Access    | Browse and enroll in courses         | ✅   |
+| 🔒 Authentication   | Secure login/signup                  | ✅   |
 
 <h2>🤝Contributing</h2>
 
