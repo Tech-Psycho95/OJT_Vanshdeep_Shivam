@@ -1,0 +1,144 @@
+<div *ngIf="user$ | async as user">
+
+  <div class="dashboard-content">
+
+    <nav class="navbar">
+      <div class="nav-container">
+        <img
+          src="https://www.oppia.org/build/assets/images/logo/288x128_logo_white.80dd4d21161938beda1b9f44ee840ac5.png"
+          class="logo"/>
+
+        <ul class="nav-links" [class.show]="menuOpen">
+
+          <li class="learn-dropdown">
+            <span (click)="toggleLearnMenu()">Learn ▾</span>
+            <div class="learn-menu" *ngIf="learnMenuOpen">
+              <div class="learn-item" (click)="goToMaths()">Maths</div>
+              <div class="learn-item" (click)="goToScience()">Science</div>
+            </div>
+          </li>
+
+          <li class="learn-dropdown">
+            <span (click)="toggleAboutMenu()">About ▾</span>
+            <div class="learn-menu" *ngIf="aboutMenuOpen">
+              <div class="learn-item" (click)="aboutClick('About')">About</div>
+              <div class="learn-item" (click)="aboutClick('Parents & Teachers')">For Parents/Teachers</div>
+              <div class="learn-item" (click)="aboutClick('Blog')">Blog</div>
+              <div class="learn-item" (click)="aboutClick('Impact 2024')">Impact 2024</div>
+              <div class="learn-item" (click)="aboutClick('Impact 2023')">Impact 2023</div>
+              <div class="learn-item" (click)="aboutClick('Impact 2022')">Impact 2022</div>
+            </div>
+          </li>
+
+          <li class="learn-dropdown">
+            <span (click)="toggleInvolvedMenu()">Get Involved ▾</span>
+            <div class="involved-menu" *ngIf="involvedMenuOpen">
+              <div class="involved-item" (click)="involvedClick('Schools')">Schools and Organizations</div>
+              <div class="involved-item" (click)="involvedClick('Volunteer')">Volunteer</div>
+              <div class="involved-item" (click)="involvedClick('Contact')">Contact Us</div>
+              <div class="involved-item" (click)="involvedClick('Donate')">Donate</div>
+            </div>
+          </li>
+
+          <li (click)="navClick('Donate')">Donate</li>
+
+        </ul>
+
+        <div class="menu-btn" (click)="toggleMenu()">&#9776;</div>
+
+        <div class="profile-dropdown">
+          <div class="profile-trigger" (click)="toggleProfileMenu()">
+            <img class="profile-pic" [src]="user.photoURL" />
+            <span class="dropdown-icon" [class.rotate]="profileMenuOpen">▾</span>
+          </div>
+
+          <div class="dropdown-menu" *ngIf="profileMenuOpen">
+            <div class="dropdown-item" (click)="creatorDashboard()">Creator Dashboard</div>
+            <div class="dropdown-item" (click)="learnerDashboard()">Learner Dashboard</div>
+            <div class="dropdown-item" (click)="contributorDashboard()">Contributor Dashboard</div>
+            <div class="dropdown-item" (click)="preferences()">Preferences</div>
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-item logout" (click)="logout()">Logout</div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="dashboard-bg"></div>
+
+    <main class="dashboard-container">
+      <aside class="sidebar">
+        <p (click)="setActive('Home')" [class.active]="activeItem === 'Home'">Home</p>
+        <p (click)="setActive('Goals')" [class.active]="activeItem === 'Goals'">Goals</p>
+        <p (click)="setActive('Progress')" [class.active]="activeItem === 'Progress'">Progress</p>
+        <p
+          (click)="setActive('Community Lessons')"
+          [class.active]="activeItem === 'Community Lessons'">
+          Community Lessons
+        </p>
+      </aside>
+
+      <section class="main-content">
+        <h2 class="greeting">
+          Good Afternoon, {{ user.displayName || user.email }}!
+        </h2>
+
+        <section class="continue-section">
+          <h3>Continue where you left off</h3>
+
+          <div class="story-card">
+            <img
+              src="https://storage.googleapis.com/oppiaserver-resources/story/UMvIMKl4dTyC/assets/thumbnail/img_20250627_205109_xsr8cwcx9o_height_186_width_248.svg"
+            />
+            <div class="story-info">
+              <p class="story-title">A tour of the electrical company</p>
+              <p class="story-topic">Basics of Energy</p>
+              <button (click)="continueLesson()">Continue</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="suggested-section">
+          <h3>Learn Something New</h3>
+
+          <h4 id="maths">Maths</h4>
+          <div class="topic-grid">
+            <div class="topic-card" (click)="openTopic('Place Values')">
+              <img src="https://storage.googleapis.com/oppiaserver-resources/topic/iX9kYCjnouWN/assets/thumbnail/img_20200521_033202_4r4j4ljrwy_height_324_width_432.svg" />
+              <p>Place Values</p>
+            </div>
+
+            <div class="topic-card" (click)="openTopic('Addition & Subtraction')">
+              <img src="https://storage.googleapis.com/oppiaserver-resources/topic/sWBXKH4PZcK6/assets/thumbnail/img_20200906_225251_bkvjd84p8c_height_1065_width_1420.svg" />
+              <p>Addition & Subtraction</p>
+            </div>
+
+            <div class="topic-card" (click)="openTopic('Multiplication')">
+              <img src="https://storage.googleapis.com/oppiaserver-resources/topic/C4fqwrvqWpRm/assets/thumbnail/img_20200703_022435_j83mwprxmz_height_567_width_756.svg" />
+              <p>Multiplication</p>
+            </div>
+          </div>
+
+          <h4 id="science">Science</h4>
+          <div class="topic-grid">
+            <div class="topic-card" (click)="openTopic('Matter and Non-Matther')">
+              <img src="https://storage.googleapis.com/oppiaserver-resources/topic/wkYKZeAiRiAL/assets/thumbnail/img_20250725_212639_a8i6f5qx8y_height_150_width_200.svg" />
+              <p>Matter and Non-Matter</p>
+            </div>
+
+            <div class="topic-card" (click)="openTopic('Basics of Energy')">
+              <img src="https://storage.googleapis.com/oppiaserver-resources/topic/wn2VaObEbiVE/assets/thumbnail/img_20250626_184759_mcv9f6tddo_height_150_width_200.svg" />
+              <p>Basics of Energy</p>
+            </div>
+
+            <div class="topic-card" (click)="openTopic('Scientific Principles')">
+              <img src="https://storage.googleapis.com/oppiaserver-resources/topic/aEQ9rYeAW7GN/assets/thumbnail/img_20251106_074212_9wv0b1xptr_height_170_width_189.svg" />
+              <p>Scientific Principles</p>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+  </div>
+</div>

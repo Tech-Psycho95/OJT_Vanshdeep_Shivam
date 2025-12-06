@@ -1,0 +1,126 @@
+import { Component, inject } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { AuthService } from '../../auth/auth.service'
+import { Router } from '@angular/router'
+
+@Component({
+  selector: 'app-dashboard',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './dashboard.html',
+  styleUrls: ['./dashboard.css']
+})
+export class DashboardComponent {
+
+  private auth = inject(AuthService)
+  private router = inject(Router)
+
+  user$ = this.auth.user$
+
+  menuOpen = false
+  profileMenuOpen = false
+  learnMenuOpen = false
+  aboutMenuOpen = false
+  involvedMenuOpen = false
+
+  activeItem = 'Home'
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen
+  }
+
+  toggleProfileMenu() {
+    this.profileMenuOpen = !this.profileMenuOpen
+    this.learnMenuOpen = false
+    this.aboutMenuOpen = false
+    this.involvedMenuOpen = false
+  }
+
+  toggleLearnMenu() {
+    this.learnMenuOpen = !this.learnMenuOpen
+    this.aboutMenuOpen = false
+    this.involvedMenuOpen = false
+    this.profileMenuOpen = false
+  }
+
+  toggleAboutMenu() {
+    this.aboutMenuOpen = !this.aboutMenuOpen
+    this.learnMenuOpen = false
+    this.involvedMenuOpen = false
+    this.profileMenuOpen = false
+  }
+
+  toggleInvolvedMenu() {
+    this.involvedMenuOpen = !this.involvedMenuOpen
+    this.learnMenuOpen = false
+    this.aboutMenuOpen = false
+    this.profileMenuOpen = false
+  }
+
+  setActive(item: string) {
+    this.activeItem = item
+    if (window.innerWidth < 768) {
+      this.menuOpen = false
+    }
+  }
+
+  navClick(item: string) {
+    alert(item + ' clicked')
+  }
+
+  aboutClick(item: string) {
+    alert(item + ' clicked')
+    this.aboutMenuOpen = false
+  }
+
+  involvedClick(item: string) {
+    alert(item + ' clicked')
+    this.involvedMenuOpen = false
+  }
+
+  continueLesson() {
+    alert('Resuming your last lesson...')
+  }
+
+  openTopic(topic: string) {
+    alert('Opening topic: ' + topic)
+  }
+
+  goToMaths() {
+    this.learnMenuOpen = false
+    document.getElementById('maths')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  goToScience() {
+    this.learnMenuOpen = false
+    document.getElementById('science')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  creatorDashboard() {
+    alert('Creator Dashboard clicked')
+    this.profileMenuOpen = false
+  }
+
+  learnerDashboard() {
+    this.profileMenuOpen = false
+    this.router.navigateByUrl('/dashboard')
+  }
+
+  contributorDashboard() {
+    alert('Contributor Dashboard clicked')
+    this.profileMenuOpen = false
+  }
+
+  preferences() {
+    alert('Preferences clicked')
+    this.profileMenuOpen = false
+  }
+
+  logout() {
+    this.profileMenuOpen = false
+    this.auth.logout()
+  }
+
+}
+
+
