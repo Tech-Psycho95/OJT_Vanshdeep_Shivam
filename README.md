@@ -29,7 +29,7 @@ An oppia styled mobile‑friendly learner dashboard that empowers users to track
 <img src="https://github.com/Tech-Psycho95/OJT_Vanshdeep_Shivam/blob/main/Asset-UI%20interface.jpg"/>
 <img src="https://github.com/Tech-Psycho95/OJT_Vanshdeep_Shivam/blob/main/Login_page.jpg"/>
 
-<h2>🚀 Live Demo Link</h2>
+<h2>🚀 Live Demo</h2>
 
 [![My Skills](https://skillicons.dev/icons?i=firebase&theme=light)](https://angular-auth-e6364.web.app/login)
 
