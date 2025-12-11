@@ -8,6 +8,8 @@ An oppia styled mobile‑friendly learner dashboard that empowers users to track
 | 📱 Responsive UI    | Works on mobile, tablet, desktop     | ✅   |
 | 🎯 Course Access    | Browse and enroll in courses         | ✅   |
 | 🔒 Authentication   | Secure login/signup                  | ✅   |
+| 🧩 Quiz Module | Interactive quiz with instant scoring and certificate | 🚧 |
+| 🖼️ Certificate Generator | Generates a personalized certificate with learner name and completion date after finishing a quiz | 🚧 |
 
 <h2>🤝Contributing</h2>
 
