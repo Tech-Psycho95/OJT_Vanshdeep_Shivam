@@ -1,0 +1,207 @@
+.oppia-header {
+  width: 100%;
+  background: #1f6f60; 
+  padding: 12px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.oppia-header-logo {
+  height: 42px;
+  cursor: pointer;
+}
+
+.oppia-header-links {
+  display: flex;
+  gap: 25px;
+  font-size: 15px;
+  color: white;
+  font-weight: 500;
+}
+
+.oppia-header-links a {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.oppia-header-links a:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+  .oppia-header {
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+  }
+
+  .oppia-header-links {
+    margin-top: 8px;
+    gap: 12px;
+    font-size: 14px;
+  }
+}
+
+.quiz-container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.start-screen,
+.result-screen,
+.quiz-screen {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.start-btn,
+.submit-btn,
+.retry-btn,
+.certificate-btn {
+  background: #0066ff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.start-btn:hover,
+.submit-btn:hover,
+.retry-btn:hover,
+.certificate-btn:hover {
+  background: #004ecc;
+}
+
+.result-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.question-card {
+  background: #f8f9ff;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.question {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+}
+
+.option {
+  background: #fff;
+  padding: 12px;
+  margin: 6px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: #eaf0ff;
+}
+
+@media (max-width: 600px) {
+  .result-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .retry-btn,
+  .certificate-btn {
+    width: 100%;
+  }
+}
+
+.certificate-container {
+  width: 1100px;
+  padding: 40px;
+  background: #fdfbf7;
+  color: #222;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  margin: auto;
+}
+
+.certificate-border {
+  border: 12px solid #c9a34a;
+  padding: 60px;
+  position: relative;
+  background: #fffdf5;
+  border-radius: 6px;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.15);
+}
+
+.certificate-border::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 480px;
+  height: 480px;
+  opacity: 0.07;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+
+.cert-logo {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  width: 160px;
+  opacity: 0.95;
+}
+
+.cert-title {
+  font-size: 50px;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+}
+
+.cert-presented {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.cert-username {
+  font-size: 48px;
+  font-family: "Great Vibes", cursive;
+  margin: 15px 0;
+}
+
+.cert-course-name {
+  font-size: 30px;
+  margin-top: 15px;
+  font-family: 'Playfair Display', serif;
+}
+
+.cert-score {
+  font-size: 22px;
+  margin-top: 20px;
+}
+
+.cert-date {
+  font-size: 18px;
+  margin-top: 25px;
+  font-style: italic;
+}

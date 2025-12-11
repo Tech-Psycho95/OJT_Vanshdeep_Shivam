@@ -1,20 +1,19 @@
-import { CanActivateFn, Router } from '@angular/router'
-import { inject } from '@angular/core'
-import { Auth, authState } from '@angular/fire/auth'
-import { map, take } from 'rxjs/operators'
+import { inject } from '@angular/core';
+import { CanActivateFn, Router } from '@angular/router';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
-export const athGuard: CanActivateFn = () => {
-  const auth = inject(Auth)
-  const router = inject(Router)
+export const authGuard: CanActivateFn = (route, state) => {
+  const router = inject(Router);
+  const auth = getAuth();
 
-  return authState(auth).pipe(
-    take(1),
-    map(user => {
+  return new Promise<boolean>((resolve) => {
+    onAuthStateChanged(auth, (user) => {
       if (user) {
-        return true
+        resolve(true);
+      } else {
+        router.navigate(['/login']);
+        resolve(false);
       }
-      router.navigateByUrl('/login')
-      return false
-    })
-  )
-}
+    });
+  });
+};

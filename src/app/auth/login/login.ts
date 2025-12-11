@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core'
-import { CommonModule } from '@angular/common'
-import { AuthService } from '../auth.service'
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,9 +11,18 @@ import { AuthService } from '../auth.service'
   styleUrls: ['./login.css']
 })
 export class LoginComponent {
-  private auth = inject(AuthService)
+
+  private auth = inject(AuthService);
+  private router = inject(Router);
 
   login() {
-    this.auth.googleSignIn()
+    this.auth.loginWithGoogle()
+      .then(result => {
+        console.log("Google login success:", result);
+        this.router.navigate(['/dashboard']);  // ⭐ REDIRECT AFTER LOGIN
+      })
+      .catch(err => {
+        console.error("Google login failed:", err);
+      });
   }
 }

@@ -1,0 +1,75 @@
+<div class="oppia-header">
+  <img
+    src="https://www.oppia.org/build/assets/images/logo/288x128_logo_white.80dd4d21161938beda1b9f44ee840ac5.png"
+    class="oppia-header-logo"
+  />
+</div>
+
+<div class="quiz-container">
+
+  <div *ngIf="!started && !submitted" class="start-screen">
+    <h2>{{ topic }} Quiz</h2>
+    <p>This quiz contains {{ questions.length }} questions.</p>
+    <button class="start-btn" (click)="startQuiz()">Start Quiz</button>
+  </div>
+
+  <div *ngIf="started && !submitted" class="quiz-screen">
+    <h2>{{ topic }} Quiz</h2>
+
+    <div *ngFor="let q of questions; let i = index" class="question-card">
+      <p class="question">Q{{ i + 1 }}. {{ q.question }}</p>
+
+      <div class="options">
+        <label *ngFor="let opt of q.options; let j = index" class="option">
+          <input
+            type="radio"
+            name="q{{ i }}"
+            [value]="j"
+            [(ngModel)]="selected[i]"
+          />
+          {{ opt }}
+        </label>
+      </div>
+    </div>
+
+    <button class="submit-btn" (click)="submitQuiz()">Submit Quiz</button>
+  </div>
+
+  <div *ngIf="submitted" class="result-screen">
+    <h2>Quiz Completed!</h2>
+    <p class="score">You scored {{ score }} / {{ total }}</p>
+
+    <div class="result-buttons">
+      <button class="retry-btn" (click)="restart()">Try Again</button>
+      <button class="certificate-btn" (click)="downloadCertificate()">Download Certificate</button>
+    </div>
+  </div>
+
+</div>
+
+<div
+  #certificateEl
+  id="certificate"
+  class="certificate-container"
+  style="display:none;"
+>
+
+  <div class="certificate-border">
+
+
+    <h1 class="cert-title">Certificate of Completion</h1>
+
+    <p class="cert-presented">is proudly presented to</p>
+
+    <h2 class="cert-username">{{ userName }}</h2>
+
+    <p class="cert-presented">for successfully completing the quiz:</p>
+
+    <h2 class="cert-course-name">"{{ topic }}"</h2>
+
+    <p class="cert-score">Score: {{ score }} / {{ total }}</p>
+
+    <p class="cert-date">Date: {{ date }}</p>
+
+  </div>
+</div>

@@ -1,25 +1,40 @@
-import { Injectable, inject } from '@angular/core'
-import { Router } from '@angular/router'
-import { Auth, GoogleAuthProvider, signInWithPopup, signOut, authState, User } from '@angular/fire/auth'
-import { Observable } from 'rxjs'
+import { Injectable } from '@angular/core';
+import { initializeApp } from 'firebase/app';
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signOut,
+  onAuthStateChanged,
+  User
+} from 'firebase/auth';
+import { BehaviorSubject } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private auth = inject(Auth)
-  private router = inject(Router)
 
-  user$: Observable<User | null> = authState(this.auth)
+  private app = initializeApp(environment.firebase);
+  private auth = getAuth(this.app);
 
-  async googleSignIn(): Promise<void> {
-    const provider = new GoogleAuthProvider()
-    await signInWithPopup(this.auth, provider)
-    await this.router.navigateByUrl('/dashboard')
+  private userSubject = new BehaviorSubject<User | null>(null);
+  user$ = this.userSubject.asObservable();
+
+  constructor() {
+    onAuthStateChanged(this.auth, user => {
+      this.userSubject.next(user);
+    });
   }
 
-  async logout(): Promise<void> {
-    await signOut(this.auth)
-    await this.router.navigateByUrl('/login')
+  loginWithGoogle() {
+    const provider = new GoogleAuthProvider();
+    provider.setCustomParameters({ prompt: "select_account" });
+    return signInWithPopup(this.auth, provider);
+  }
+
+  logout() {
+    return signOut(this.auth);
   }
 }
