@@ -1,0 +1,43 @@
+<div
+  class="classroom-banner"
+  [style.backgroundImage]="'url(' + banner.bg + ')'"
+>
+  <div class="banner-content">
+    <div class="banner-text">
+      <span>{{ banner.subtitle }}</span>
+      <h1>{{ banner.title }}</h1>
+    </div>
+
+    <img
+      class="banner-thumbnail"
+      [src]="banner.thumbnail"
+    />
+  </div>
+</div>
+
+<div class="course-page">
+
+  <div class="diagnostic-box-container">
+    <div class="diagnostic-box">
+      <h4>Already know some {{ banner.title }}?</h4>
+      <p>Take a short quiz to find something new to learn.</p>
+      <button class="oppia-quiz-btn" (click)="startQuiz()">
+  Take quiz
+</button>
+
+    </div>
+  </div>
+
+  <section class="course-topics">
+    <h2>Topics in this course</h2>
+
+    <div class="topic-grid">
+      <div class="topic-card" *ngFor="let t of topics">
+        <img [src]="t.img" />
+        <p>{{ t.title }}</p>
+        <small>{{ t.lessons }}</small>
+      </div>
+    </div>
+  </section>
+
+</div>

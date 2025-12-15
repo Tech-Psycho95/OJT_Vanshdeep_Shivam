@@ -1,207 +1,153 @@
-.oppia-header {
-  width: 100%;
-  background: #1f6f60; 
-  padding: 12px 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
+.quiz-header {
+  background: #1f6f60;
+  padding: 12px 24px;
 }
 
-.oppia-header-logo {
-  height: 42px;
-  cursor: pointer;
+.quiz-header img {
+  height: 40px;
 }
 
-.oppia-header-links {
-  display: flex;
-  gap: 25px;
-  font-size: 15px;
-  color: white;
-  font-weight: 500;
-}
-
-.oppia-header-links a {
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.oppia-header-links a:hover {
-  opacity: 0.8;
-}
-
-@media (max-width: 600px) {
-  .oppia-header {
-    flex-direction: column;
-    align-items: center;
-    padding: 12px;
-  }
-
-  .oppia-header-links {
-    margin-top: 8px;
-    gap: 12px;
-    font-size: 14px;
-  }
-}
-
-.quiz-container {
-  max-width: 700px;
-  margin: auto;
-  padding: 20px;
+.intro-wrapper,
+.question-wrapper,
+.result-wrapper {
   text-align: center;
-  font-family: 'Inter', sans-serif;
+  padding: 40px;
 }
 
-.start-screen,
-.result-screen,
-.quiz-screen {
+.intro-card,
+.question-card,
+.progress-card {
   background: white;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.1);
 }
 
-.start-btn,
-.submit-btn,
-.retry-btn,
-.certificate-btn {
-  background: #0066ff;
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: 0.2s;
-}
-
-.start-btn:hover,
-.submit-btn:hover,
-.retry-btn:hover,
-.certificate-btn:hover {
-  background: #004ecc;
-}
-
-.result-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 20px;
-}
-
-.question-card {
-  background: #f8f9ff;
-  margin-top: 20px;
-  padding: 20px;
-  border-radius: 12px;
-  text-align: left;
-}
-
-.question {
-  font-weight: bold;
+.otter {
+  width: 80px;
   margin-bottom: 10px;
 }
 
-.options {
-  display: flex;
-  flex-direction: column;
+.otter.small {
+  width: 60px;
 }
 
-.option {
-  background: #fff;
-  padding: 12px;
-  margin: 6px 0;
+.progress-bar {
+  height: 12px;
+  background: #e5e5e5;
   border-radius: 8px;
-  border: 1px solid #ddd;
-  cursor: pointer;
+  overflow: hidden;
 }
 
-.option:hover {
-  background: #eaf0ff;
+.progress-fill {
+  height: 100%;
+  background: #2b4fa2;
 }
 
-@media (max-width: 600px) {
-  .result-buttons {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .retry-btn,
-  .certificate-btn {
-    width: 100%;
-  }
+.question {
+  font-size: 18px;
+  margin: 20px 0;
 }
 
-.certificate-container {
-  width: 1100px;
-  padding: 40px;
-  background: #fdfbf7;
-  color: #222;
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-  margin: auto;
+.options label {
+  display: block;
+  text-align: left;
+  padding: 10px;
 }
 
-.certificate-border {
-  border: 12px solid #c9a34a;
-  padding: 60px;
-  position: relative;
-  background: #fffdf5;
-  border-radius: 6px;
-  box-shadow: 0 0 35px rgba(0, 0, 0, 0.15);
-}
-
-.certificate-border::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 480px;
-  height: 480px;
-  opacity: 0.07;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-
-
-.cert-logo {
-  position: absolute;
-  top: 35px;
-  right: 35px;
-  width: 160px;
-  opacity: 0.95;
-}
-
-.cert-title {
-  font-size: 50px;
-  font-weight: 700;
-  font-family: 'Playfair Display', serif;
-}
-
-.cert-presented {
-  font-size: 20px;
-  margin-top: 10px;
-}
-
-.cert-username {
-  font-size: 48px;
-  font-family: "Great Vibes", cursive;
-  margin: 15px 0;
-}
-
-.cert-course-name {
-  font-size: 30px;
-  margin-top: 15px;
-  font-family: 'Playfair Display', serif;
-}
-
-.cert-score {
-  font-size: 22px;
+.actions {
+  display: flex;
+  justify-content: space-between;
   margin-top: 20px;
 }
 
-.cert-date {
-  font-size: 18px;
-  margin-top: 25px;
-  font-style: italic;
+.primary-btn {
+  background: #2b4fa2;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.ghost-btn {
+  background: transparent;
+  border: 2px solid #2b4fa2;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.primary-btn {
+  background: #2f6f64;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+}
+
+.secondary-btn {
+  background: #fff;
+  color: #2f6f64;
+  padding: 10px 22px;
+  border-radius: 6px;
+  border: 2px solid #2f6f64;
+  font-weight: 600;
+}
+.course-card {
+  background: #fff;
+  width: 260px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.12);
+}
+
+.course-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.course-card h3 {
+  margin: 12px 0 4px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* CERTIFICATE */
+.certificate {
+  width: 1100px;
+  background: #fffdf5;
+  padding: 60px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.certificate-border {
+  border: 10px solid #c9a34a;
+  padding: 60px;
+  text-align: center;
+}
+
+.certificate h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.certificate h2 {
+  font-size: 32px;
+  margin-top: 10px;
 }
