@@ -1,25 +1,36 @@
-import { Routes } from '@angular/router';
-import { authGuard } from './auth/ath-guard';
+import { Routes } from '@angular/router'
+import { authGuard } from './auth/ath-guard'
 
 export const routes: Routes = [
 
   {
     path: 'login',
     loadComponent: () =>
-      import('./auth/login/login').then(m => m.LoginComponent)
+      import('./auth/login/login')
+        .then(m => m.LoginComponent)
   },
 
   {
     path: 'dashboard',
     loadComponent: () =>
-      import('./dashboard/dashboard/dashboard').then(m => m.DashboardComponent),
+      import('./dashboard/dashboard/dashboard')
+        .then(m => m.DashboardComponent),
     canActivate: [authGuard]
   },
 
   {
-    path: 'topic/:topic/quiz',
+    path: 'course/:subject',
     loadComponent: () =>
-      import('./dashboard/quiz/quiz.component').then(m => m.QuizComponent),
+      import('./dashboard/courses/courses')
+        .then(m => m.CoursesComponent),
+    canActivate: [authGuard]
+  },
+
+  {
+    path: 'quiz/:subject',
+    loadComponent: () =>
+      import('./dashboard/quiz/quiz.component')
+        .then(m => m.QuizComponent),
     canActivate: [authGuard]
   },
 
@@ -29,9 +40,9 @@ export const routes: Routes = [
     pathMatch: 'full'
   },
 
-  
   {
     path: '**',
     redirectTo: 'login'
   }
-];
+
+]

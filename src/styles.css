@@ -388,6 +388,33 @@ h3 {
   }
 }
 
+.course-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 28px 0 12px;
+  color: #1f4037;
+  font-size: 1.1rem;
+}
+
+.course-arrow {
+  font-size: 24px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.course-arrow:hover {
+  transform: translateX(4px);
+}
+
+.course-container {
+  padding: 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
 
 
 

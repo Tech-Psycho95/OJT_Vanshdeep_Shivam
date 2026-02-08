@@ -1,11 +1,10 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { QuizService } from './quiz.service';
-import { AuthService } from '../../auth/auth.service';
-import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
+import { Component, ElementRef, ViewChild } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { FormsModule } from '@angular/forms'
+import { ActivatedRoute, Router } from '@angular/router'
+import { QuizService } from './quiz.service'
+import html2canvas from 'html2canvas'
+import jsPDF from 'jspdf'
 
 @Component({
   selector: 'app-quiz',
@@ -15,62 +14,86 @@ import jsPDF from 'jspdf';
   styleUrls: ['./quiz.css']
 })
 export class QuizComponent {
-  @ViewChild("certificateEl") certificateEl!: ElementRef;
 
-  topic = '';
-  questions: any[] = [];
-  selected: number[] = [];
-  started = false;
-  submitted = false;
-  score = 0;
-  total = 0;
-  userName = '';
-  date = new Date().toLocaleDateString();
+  @ViewChild('certificateEl') certificateEl!: ElementRef
+
+  subject = ''
+  questions: any[] = []
+  index = 0
+  selected: any = null
+  score = 0
+
+  started = false
+  completed = false
+
+  recommendedCourse: any = null
 
   constructor(
     private route: ActivatedRoute,
     private quizService: QuizService,
-    private auth: AuthService
+    private router: Router
   ) {}
 
   ngOnInit() {
-    this.topic = this.route.snapshot.paramMap.get('topic') || '';
-    this.questions = this.quizService.getQuiz(this.topic);
-    this.total = this.questions.length;
-    this.selected = new Array(this.total).fill(-1);
-    this.auth.user$.subscribe(user => {
-      this.userName = user?.displayName || user?.email || 'Student';
-    });
+    this.subject = this.route.snapshot.paramMap.get('subject') || 'math'
+    this.questions = this.quizService.getQuiz(this.subject)
   }
 
-  startQuiz() {
-    this.started = true;
+  startTest() {
+    this.started = true
   }
 
-  submitQuiz() {
-    this.score = 0;
-    this.questions.forEach((q, i) => {
-      if (this.selected[i] === q.answer) this.score++;
-    });
-    this.submitted = true;
+  submit() {
+    if (this.selected === this.questions[this.index].answer) {
+      this.score++
+    }
+
+    this.selected = null
+    this.index++
+
+    if (this.index >= this.questions.length) {
+      this.finishTest()
+    }
   }
 
-  restart() {
-    this.started = false;
-    this.submitted = false;
-    this.selected = new Array(this.questions.length).fill(-1);
+  finishTest() {
+    this.completed = true
+    this.recommendedCourse =
+      this.subject === 'math'
+        ? {
+            title: 'Fractions',
+            lessons: '12 Lessons',
+            img: 'https://storage.googleapis.com/oppiaserver-resources/topic/fractions.svg'
+          }
+        : {
+            title: 'Basics of Energy',
+            lessons: '8 Lessons',
+            img: 'https://storage.googleapis.com/oppiaserver-resources/topic/energy.svg'
+          }
+  }
+
+  progress() {
+    return Math.round((this.index / this.questions.length) * 100)
+  }
+
+  startRecommended() {
+    this.router.navigate(['/course', this.subject])
   }
 
   async downloadCertificate() {
-    const element = this.certificateEl.nativeElement;
-    element.style.display = "block";
-    const canvas = await html2canvas(element, { scale: 3 });
-    const imgData = canvas.toDataURL("image/png");
-    const pdf = new jsPDF("landscape", "mm", "a4");
-    const width = pdf.internal.pageSize.getWidth();
-    const height = pdf.internal.pageSize.getHeight();
-    pdf.addImage(imgData, "PNG", 0, 0, width, height);
-    pdf.save(`${this.topic}_certificate.pdf`);
-    element.style.display = "none";
+    const el = this.certificateEl.nativeElement
+    el.style.display = 'block'
+
+    const canvas = await html2canvas(el, { scale: 3 })
+    const img = canvas.toDataURL('image/png')
+
+    const pdf = new jsPDF('landscape', 'mm', 'a4')
+    const width = pdf.internal.pageSize.getWidth()
+    const height = pdf.internal.pageSize.getHeight()
+
+    pdf.addImage(img, 'PNG', 0, 0, width, height)
+    pdf.save(`${this.subject}-certificate.pdf`)
+
+    el.style.display = 'none'
   }
 }
